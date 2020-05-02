@@ -1,0 +1,84 @@
+#%RAML 1.0
+title: Customer System API
+version: 
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/ee3e2f48-3a20-4c9e-a6ba-bfb9109f8955/ # baseUri: 
+
+
+types:
+  Coustomerinformation:
+    type: string
+    description: customer information
+  properties:
+  customerID?: 
+        type: integer
+        description: Identifier of customer
+  phone?: 
+        type: integer
+        description: Phone number
+  customerAddress?: 
+        type: any
+        description: customerAddress
+
+
+/customer:
+  post:
+    displayName: Create customer
+    description: Create customer contact  
+    responses:
+      201:
+        body: 
+          application/json:
+            type: Coustomerinformation
+            example: !include examples/post_customer_example.json    
+              
+  /{Id}:          
+    get:
+      displayName: retreive customers
+      description: Return customer information by customerId 
+      responses:
+        200: 
+          body:
+            application/json:
+              type: Coustomerinformation
+              example: !include examples/get_customer_byID_example.json
+
+    delete:
+      displayName: Delete customer
+      description: Delete customer contact by customerId  
+      responses:
+        200:
+          body: 
+            application/json:
+              type: Coustomerinformation 
+              example: !include examples/delete_customerbyid_example.json
+        401:
+          body:
+            application/json:
+              type: any
+              example:
+                {"error type":"Unauthorized"}      
+    put:
+      displayName: Update customer
+      description: Update customer contact by customerId  
+      body:
+        application/json:
+          type: Coustomerinformation
+          example: !include examples/put_customer_byID_example.json 
+      responses:
+        200:
+          body: 
+              application/json: 
+                type: Coustomerinformation
+                example: !include examples/put_customer_byID_example.json
+        500:
+          body:
+            application/json:
+              type: any
+              example:
+                   { 
+                   "error":"Server unavailable " 
+                       }        
+
+
+
+

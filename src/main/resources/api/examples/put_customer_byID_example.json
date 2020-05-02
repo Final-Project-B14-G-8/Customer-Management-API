@@ -1,0 +1,23 @@
+ [{
+    "fName": "Abebe",
+    "lName": "beso",
+    "customerID": "1",
+    "phoneNumber": "202-111-1111",
+    "customerAddress": "2323 12th St NW Washington, D.C. 20001",
+    "SSN": "11-111-1111"
+  },
+      {
+    "fName": "Faska",
+    "lName": "Abebe",
+    "customerID": "32",
+    "phoneNumber": "214-585-1111",
+    "customerAddress": "2565 15th St NW Washington, D.C. 20232",
+    "SSN": "11-111-1111"
+  },
+  {
+    "fName": "Ribka",
+    "lName": "Max",
+    "customerID": "25",
+    "phoneNumber": "202-111-5555",
+    "customerAddress": "2020 11th St NW Washington, D.C. 20112",
+    "SSN": "11-111-1111"}]
